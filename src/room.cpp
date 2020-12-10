@@ -30,3 +30,11 @@ bool Room::overlaps(int x_pos, int y_pos, int x_size, int y_size) {
     return true;
 
 }
+
+bool Room::operator==(Room other) {
+    Point other_UL = other.getUpperLeftPoint();
+    Point other_LR = other.getLowerRightPoint();
+
+    return upper_left.x == other_UL.x && upper_left.y == other_UL.y &&
+        lower_right.x == other_LR.x && lower_right.y == other_LR.y;
+}
