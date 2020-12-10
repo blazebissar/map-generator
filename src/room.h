@@ -26,4 +26,24 @@ class Room {
         Point getLowerRightPoint() {
             return lower_right;
         }
+
+        int getWidth() {
+            return lower_right.x - upper_left.x;
+        }
+
+        int getHeight() {
+            return lower_right.y - upper_left.y;
+        }
+
+        void setUpperLeftPoint(int x, int y) {
+            upper_left.x = x;
+            upper_left.y = y;
+        }
+
+        void setLowerRightPoint(int x, int y) {
+            lower_right.x = x;
+            lower_right.y = y;
+        }
+
+        bool operator==(const Room other);
 };
